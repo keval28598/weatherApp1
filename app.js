@@ -7,7 +7,7 @@ const geocode = require("./utilis/geocode");
 const forecast = require("./utilis/forecast");
 
 const publicDirectoryPath = path.join(__dirname, "./public");
-
+const port = process.env.PORT;
 app.use(express.static(publicDirectoryPath)); 
 app.set("view engine", "hbs");
 // app.set('views','./public/views')
@@ -98,6 +98,6 @@ app.get("*", (req, res) => {
   });
 });
 
-app.listen(5000, () => {
-  console.log("server is running");
+app.listen(port, () => {
+  console.log("server is running" +port);
 });
